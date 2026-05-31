@@ -61,15 +61,15 @@ with your real URLs before (or right after) you go live:
 
 | Placeholder           | Replace with                                              | Appears in |
 |-----------------------|----------------------------------------------------------|------------|
-| `{{SUBSTACK_URL}}`    | Your Substack base URL, e.g. `https://yourname.substack.com` | `index.html`, `viz/hardy-weinberg.html` (nav links, hero buttons, subscribe button, footers) |
-| `{{GITHUB_REPO_URL}}` | Your repo URL, e.g. `https://github.com/you/learnbiostats`   | `index.html`, `viz/hardy-weinberg.html` (nav links, hero button, footers) |
+| `https://YOURHANDLE.substack.com`    | Your Substack base URL, e.g. `https://yourname.substack.com` | `index.html`, `viz/hardy-weinberg.html` (nav links, hero buttons, subscribe button, footers) |
+| `https://github.com/lyndonkl/learnbiostats` | Your repo URL, e.g. `https://github.com/you/learnbiostats`   | `index.html`, `viz/hardy-weinberg.html` (nav links, hero button, footers) |
 
 Quick find-and-replace from the repo root (review the diff before committing):
 
 ```bash
 # macOS / BSD sed
-grep -rl '{{SUBSTACK_URL}}' docs | xargs sed -i '' 's|{{SUBSTACK_URL}}|https://yourname.substack.com|g'
-grep -rl '{{GITHUB_REPO_URL}}' docs | xargs sed -i '' 's|{{GITHUB_REPO_URL}}|https://github.com/you/learnbiostats|g'
+grep -rl 'https://YOURHANDLE.substack.com' docs | xargs sed -i '' 's|https://YOURHANDLE.substack.com|https://yourname.substack.com|g'
+grep -rl 'https://github.com/lyndonkl/learnbiostats' docs | xargs sed -i '' 's|https://github.com/lyndonkl/learnbiostats|https://github.com/you/learnbiostats|g'
 ```
 
 (On Linux, use `sed -i 's|...|...|g'` without the empty `''` argument.)
