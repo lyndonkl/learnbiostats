@@ -23,6 +23,19 @@ Source: [[openstax-biology-2e|Biology 2e]]
 - **Read on:** _(fill when you read)_
 - **Reading depth:** selective — Unit III: Genetics (Ch. 11 Meiosis; Ch. 12 Mendel; Ch. 13 Modern Understandings of Inheritance; Ch. 14 DNA Structure & Function; skim Ch. 15 Genes and Proteins; preview Ch. 17 Biotechnology & Genomics). Read for "enough to read a methods section," not molecular mastery.
 
+## Chapters & direct links (verified 2026-05-31)
+For p1m1 — DNA, genes, inheritance:
+- **Ch 14 — DNA Structure and Function** (what DNA + chromosomes physically are): https://openstax.org/books/biology-2e/pages/14-introduction
+  - §14.2 DNA Structure and Sequencing: https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing
+- **§11.1 The Process of Meiosis** — *crossing over / recombination*; this is where the "why does ind1 break the SNP1≈SNP3 pattern" question is answered: https://openstax.org/books/biology-2e/pages/11-1-the-process-of-meiosis
+- **Ch 12 — Mendel's Experiments and Heredity**: https://openstax.org/books/biology-2e/pages/12-introduction
+- **Ch 13 — Modern Understanding of Inheritance** (genetic *linkage*): https://openstax.org/books/biology-2e/pages/13-introduction
+
+Video on-ramps (Crash Course Biology, Hank Green):
+- #10 DNA Structure and Replication: https://www.youtube.com/watch?v=8kK2zwjRV0M
+- #9 Heredity: https://www.youtube.com/watch?v=CBezq1fFUEA
+- Full Biology playlist: https://www.youtube.com/playlist?list=PL3EED4C1D684D3ADF
+
 ## The big question
 *(reading prompt — answer while reading, do not pre-fill)*
 What is the minimum molecular and Mendelian vocabulary a quantitative person needs so that a genotype matrix stops being anonymous columns? As you read, keep asking: what does a column (a SNP) physically *correspond to* in the cell, and how does the 0/1/2 allele-copy encoding map onto the chromosome biology described here?

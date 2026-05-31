@@ -1,7 +1,7 @@
 ---
 type: tracker
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-05-31
 tags: [progress, status-board]
 ---
 
@@ -9,8 +9,8 @@ tags: [progress, status-board]
 
 The single status board for the curriculum. `biostat-coach` reads and updates this; I keep it honest. Status legend matches the module lifecycle in [[conventions|Vault Conventions]] §6: **not-started → reading → practicing → assessed → mastered**. A module is `mastered` only at the `proficient`+ band on its core claims (see [[skills-matrix|the skills matrix]]).
 
-**Daily streak:** 0 days (started 2026-05-30) · last study session: — · longest streak: 0
-**This week's focus:** Kick off [[p1m1-dna-genes-and-inheritance|p1m1 · DNA, Genes, and Inheritance]] — first Kolb session, first evergreen notes. Set up the daily cadence.
+**Daily streak:** 1 day (started 2026-05-30) · last study session: 2026-05-31 (p1m1, 3 notes) · longest streak: 1
+**This week's focus:** [[p1m1-dna-genes-and-inheritance|p1m1]] in progress — 3 evergreen notes earned (genotype, mutation, recombination). Next: the Aa×Aa cross (apply), rebuild linkage, then the phase project.
 **Phase in progress:** Phase 1 — Genetics for Data Scientists.
 
 ---
@@ -19,7 +19,7 @@ The single status board for the curriculum. `biostat-coach` reads and updates th
 
 | Phase | Title | Duration | Status | Project |
 |---|---|---|---|---|
-| 1 | [[phase-1-genetics-for-data-scientists\|Genetics for Data Scientists]] | 4–6 wk | not-started | [[p1-allele-frequencies-and-ld-from-real-genotypes\|Allele Frequencies and LD From Real Genotypes]] |
+| 1 | [[phase-1-genetics-for-data-scientists\|Genetics for Data Scientists]] | 4–6 wk | in-progress | [[p1-allele-frequencies-and-ld-from-real-genotypes\|Allele Frequencies and LD From Real Genotypes]] |
 | 2 | [[phase-2-quantitative-genetics\|Quantitative Genetics]] | 6–8 wk | not-started | [[p2-simulate-a-breeding-population\|Simulate a Breeding Population]] |
 | 3 | [[phase-3-genomics-data-analysis\|Genomics Data Analysis]] | 6–8 wk | not-started | [[p3-pca-and-gwas-on-a-public-dataset\|PCA + GWAS on a Public Dataset]] |
 | 4 | [[phase-4-ml-for-genomic-prediction\|Machine Learning for Genomic Prediction]] | 8–10 wk | not-started | [[p4-genomic-prediction-benchmark\|Genomic Prediction Benchmark]] |
@@ -31,7 +31,7 @@ The single status board for the curriculum. `biostat-coach` reads and updates th
 
 | ID | Module | Weeks | Status | Mastery | Review due |
 |---|---|---|---|---|---|
-| p1m1 | [[p1m1-dna-genes-and-inheritance\|DNA, Genes, and Inheritance]] | Wk 1 | not-started | unfamiliar | — |
+| p1m1 | [[p1m1-dna-genes-and-inheritance\|DNA, Genes, and Inheritance]] | Wk 1 | reading | aware | 2026-06-01 |
 | p1m2 | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|Population Genetics: Allele Frequencies, HWE, Drift, Selection]] | Wk 2–3 | not-started | unfamiliar | — |
 | p1m3 | [[p1m3-intro-genomics-snps-sequencing-genotyping-ld\|Intro Genomics: SNPs, Sequencing, Genotyping, LD]] | Wk 4–6 | not-started | unfamiliar | — |
 | p2m1 | [[p2m1-phenotype-vs-genotype-sources-of-variation-and-heritability\|Phenotype vs Genotype: Sources of Variation and Heritability]] | Wk 1–2 | not-started | unfamiliar | — |
