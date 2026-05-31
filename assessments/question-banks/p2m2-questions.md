@@ -1,0 +1,64 @@
+---
+type: question-bank
+module: p2m2
+phase: 2
+created: 2026-05-30
+tags: [assessment]
+---
+
+# p2m2 · Question Bank
+
+Probing questions for the `biostat-assessor` to draw from, for [[p2m2-selection-breeding-value-and-response|p2m2 · Selection: Breeding Value and Response]]. Organized by Bloom level, ascending. The assessor never reveals answers first; it asks, waits, then probes the gap. "Answer sketches" below are for the assessor's grading only — they are not read to the learner.
+
+Two claims sit at the center of this module and every question should ladder back to one of them: **(A)** an individual's breeding value is the sum of the average effects of its alleles — the part of its merit that is actually transmitted to offspring; and **(B)** the breeder's equation `R = h²S` says response per generation equals heritability times the selection differential, which is why accurate breeding-value prediction is the whole game.
+
+## remember (retrieval — can you recall the primitive?)
+1. **Q:** State the breeder's equation and define every symbol in it.
+   *Answer sketch:* `R = h²S`. R = response (shift in offspring mean from the original population mean). h² = narrow-sense heritability (Va/Vp). S = selection differential (mean of selected parents minus population mean). Watch for confusing S with the selected mean itself, or using H² for h².
+2. **Q:** Define an individual's breeding value in one sentence, without using the word "phenotype."
+   *Answer sketch:* The sum of the average effects of the alleles the individual carries — equivalently, twice the mean deviation of its offspring from the population mean. The transmissible part of its merit. Reject answers that just say "its genotype" or "its genetic value" (that is genotypic value, which includes dominance).
+3. **Q:** Write the standardized form of the breeder's equation that uses selection intensity, and name the new symbol.
+   *Answer sketch:* `R = i·h²·σ_P` where `i` is the selection intensity (selection differential expressed in phenotypic standard deviations, S = i·σ_P) and σ_P is the phenotypic standard deviation. Equivalent to R = h²S.
+
+## understand (explain in your own words)
+1. **Q:** Why is breeding value the *transmissible* part of an individual's merit, when the genotypic value is "more complete"? What gets left behind?
+   *Answer sketch:* A parent passes alleles, not its genotype, to each offspring; meiosis breaks up the specific allele combinations. The average effects of alleles carry over (breeding value); the dominance deviations (within-locus interactions) and epistatic deviations (between-locus interactions) are reshuffled and do not reliably reappear. So genotypic value = breeding value + dominance + epistasis, and only the breeding value transmits.
+2. **Q:** In one generation of truncation selection your selected parents are 2.0 units above the population mean, but the offspring come back only ~1.0 unit above. Where did the other unit go?
+   *Answer sketch:* The 2.0 is the selection differential S, measured on *phenotype*. Only the additive fraction (h² ≈ 0.5 here) of that superiority is breeding value and transmits: R = h²S = 0.5×2.0 = 1.0. The "lost" unit is the part of the parents' superiority due to environment and non-additive genetics — not heritable, so it does not reappear (claim A + B together).
+3. **Q:** What does h² *mean* operationally in the breeder's equation — what role does it play in the sentence "R = h²S"?
+   *Answer sketch:* It is the fraction of the selected superiority that is expected to be realized in the next generation — a multiplier between 0 and 1 that converts phenotypic selection differential into genetic response. With h² = 0.1, only a tenth of S carries over; with h² = 0.9, nearly all of it. It is the "transmission efficiency" of selection.
+
+## apply (use it on a new, concrete case)
+1. **Q:** A trait has σ_P = 5, h² = 0.4. You keep the top 10% by phenotype; for the top 10% the selection intensity i ≈ 1.76. Predict the one-generation response two ways and check they agree.
+   *Answer sketch:* S = i·σ_P = 1.76×5 = 8.8. R = h²S = 0.4×8.8 = 3.52. Or directly R = i·h²·σ_P = 1.76×0.4×5 = 3.52. Agreement confirms the standardized form is the same equation. (Exact i value need not be memorized; accept a reasonable selection-intensity figure with correct mechanics.)
+2. **Q:** Same trait, same selection. You are offered a tool that lets you rank parents by their *true breeding value* instead of their noisy phenotype, at the same fraction selected. Will response go up or down, and which term in the equation captures that gain?
+   *Answer sketch:* Up. Selecting on true breeding value raises the *accuracy of selection* r (correlation between the selection criterion and true breeding value). The fuller form R = i·r·σ_A shows response scales with accuracy; phenotypic selection has r limited by h^(1/2). This is the lever behind claim B — accuracy, not S, is where the headroom is.
+3. **Q:** You run truncation selection for 10 generations, re-applying R = h²S each time with h² held fixed. Predict whether realized response per generation stays constant, accelerates, or decays — and reconcile with the equation.
+   *Answer sketch:* It decays. Sustained directional selection depletes Va (favorable alleles drift toward fixation), so true h² falls over generations even though your formula holds it constant. The plugged-in prediction overshoots reality; the gap widens. The breeder's equation is a per-generation statement that assumes Va is approximately stable.
+
+## analyze (take it apart; compare; find the assumption)
+1. **Q:** Two breeders achieve the same response R per generation. One uses extreme truncation (top 1%) on phenotype; the other uses moderate truncation (top 20%) but ranks on an accurate breeding-value predictor. Decompose how each got to the same R using R = i·r·σ_A.
+   *Answer sketch:* R = i·r·σ_A. Breeder 1 maximizes intensity i (high i) but is stuck with low accuracy r (phenotype only). Breeder 2 accepts lower i but raises r via better prediction. Same product, different routes. The analysis surfaces the two independent levers (intensity vs accuracy) and is the entry to why prediction machinery — BLUP/genomic — matters (claim B, bridge to p2m3).
+2. **Q:** The breeder's equation predicts response well in early generations but poorly after many. List the assumptions of R = h²S and identify which one breaks first under sustained selection.
+   *Answer sketch:* Assumes: (i) Va (and h²) roughly constant; (ii) additive infinitesimal model, no major shifts in allele frequencies; (iii) random mating among selected parents; (iv) constant environment / Ve. Under sustained selection the constant-Va assumption breaks first — allele frequencies change, Va erodes — so h² and σ_A shrink and predicted response exceeds realized.
+3. **Q:** "Selection acts on phenotypes; evolution responds through breeding values." Take this apart — what exactly is the relationship between the thing acted on and the thing that responds?
+   *Answer sketch:* Truncation picks parents by phenotype P = breeding value A + dominance + environment. But only A is transmitted (claim A). The selection differential S is the phenotypic superiority; the response R is the part of that superiority carried by breeding value, R = h²S. So the criterion (phenotype) and the currency of change (breeding value) differ, and h² is exactly the fraction of the former that lives in the latter.
+
+## evaluate / create (judge a tradeoff; design something)
+1. **Q:** A program has h² = 0.2 and limited resources. A consultant says "just select harder — push to the top 1%." Evaluate this against investing the same money in measuring each candidate more accurately (replicated trials, relatives' records). Which moves R more, and why?
+   *Answer sketch:* Pushing intensity i has diminishing returns (i grows slowly past extreme thresholds, and tiny selected fractions risk inbreeding and loss of Va). With low h², the phenotype is a noisy proxy for breeding value, so accuracy r is the binding constraint: R = i·r·σ_A. Investing in accuracy (which raises r toward 1) typically buys more sustained response than squeezing i, and preserves Va. The judgment must weigh inbreeding/long-term-Va cost of extreme i against the accuracy gain — this is claim B's punchline.
+2. **Q:** Design a simulation experiment that isolates the contribution of *prediction accuracy* to genetic gain, holding selection intensity and heritability fixed. What do you vary, hold fixed, and measure?
+   *Answer sketch:* Fix h², fix the selected fraction (hence i), fix σ_P. Vary only the selection *criterion*: rank candidates by (a) own phenotype, (b) a noisy predictor with tunable accuracy r, (c) true breeding value (r = 1). Hold the generative genetics identical. Measure realized response R per generation across criteria. Show R rising monotonically with r at fixed i and h² — isolating accuracy as the lever (claim B).
+
+## Misconception traps
+Common wrong mental models for this module, and the question that surfaces each:
+- **Trap: the response equals the selection differential (selected parents pass on their full superiority).** → **surfacing question:** "Your selected parents are 2.0 above the mean with h² = 0.5. What is the offspring mean, and why isn't it 2.0?" (Correct: R = h²S = 1.0; only the heritable fraction transmits.)
+- **Trap: breeding value = genotypic value = 'the genetics'.** → **surfacing question:** "An individual is heterozygous at a strongly dominant locus. Is the dominance bonus part of its breeding value? Will its offspring inherit that bonus?" (Correct: no — dominance is not in breeding value; it does not transmit, because the allele combination is reshuffled at meiosis.)
+- **Trap: to get more gain, always just select more intensely.** → **surfacing question:** "Why might pushing from the top 10% to the top 0.1% buy less extra response than improving how accurately you rank the candidates — and what long-term cost does extreme intensity carry?" (Correct: i has diminishing returns and depletes Va via inbreeding; accuracy r is often the binding lever — claim B.)
+- **Trap: h² in the breeder's equation is a fixed constant you can reuse across many generations of selection.** → **surfacing question:** "After 20 generations of selecting the same direction, why does R = h²S start over-predicting the actual response?" (Correct: Va and thus h² erode as favorable alleles fix; the equation assumes near-constant Va.)
+- **Trap: breeding value is a property the individual 'has' on its own, independent of the population.** → **surfacing question:** "Average effects of alleles depend on what? If the population's allele frequencies change, can an individual's breeding value change without its genotype changing?" (Correct: yes — average effects depend on population allele frequencies, so breeding value is defined relative to a population.)
+
+## Transfer prompt
+One question that forces the concept into an unfamiliar crop-breeding scenario.
+- **Q:** A wheat breeder runs recurrent selection for grain yield. In years 1–3 the realized gain per cycle closely matched the breeder's-equation prediction using the heritability estimated in year 1. By year 8 the program is still selecting the top 5% by plot yield just as hard, but realized gain per cycle has flattened to nearly nothing, while the year-1 prediction still says it should be climbing. The breeder also notices the elite pool has become noticeably more uniform and more related. Diagnose mechanistically why the breeder's equation drifted from reality, identify which assumption failed, and propose two concrete changes — one that addresses the eroded term directly and one that attacks a *different* lever in R = i·r·σ_A — to restart genetic gain.
+   *Answer sketch:* The flattening is depleted additive variance: sustained one-direction selection drove favorable alleles toward fixation, shrinking Va (and σ_A and h²), so R = h²S over-predicts because it held h² at the year-1 value while the real Va eroded (the constant-Va assumption failed). The increased uniformity/relatedness is the visible symptom of lost Va and rising inbreeding. Fix 1 (restore the eroded term Va/σ_A): reintroduce genetic variance — bring in new, unrelated germplasm / un-selected donors, broaden the base population, manage effective population size to slow Va loss. Fix 2 (attack a different lever): raise accuracy r — adopt a more accurate breeding-value predictor (multi-environment replicated trials, pedigree BLUP, or genomic prediction) so that at the same intensity i and remaining σ_A more of the true breeding value is captured. Strong answers note that simply selecting *harder* (raising i) is the wrong move here — it accelerates Va loss and inbreeding — which is exactly why accurate breeding-value prediction, not intensity, is the whole game.

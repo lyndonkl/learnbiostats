@@ -1,0 +1,41 @@
+# Obsidian — keep config, ignore per-session workspace + cache
+.obsidian/workspace*
+.obsidian/cache
+.trash/
+
+# OS
+.DS_Store
+
+# Python / notebooks (project code)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.python-version
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Large data — keep dataset *cards* (sources/datasets/*.md) but not raw data dumps
+data/raw/
+*.vcf
+*.vcf.gz
+*.bed
+*.bim
+*.fam
+*.bam
+*.fastq
+*.fastq.gz
+*.h5
+*.hdf5
+
+# Node (only if a viz build step is ever added; docs/ static assets stay tracked)
+node_modules/
+
+# Secrets / local config
+.env
+*.local

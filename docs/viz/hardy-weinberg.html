@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hardy-Weinberg equilibrium &amp; genetic drift — learnbiostats</title>
+  <meta name="description" content="Interactive D3 visualization: drag allele frequency to see Hardy-Weinberg genotype proportions, then shrink the population to watch genetic drift take over. Small populations wander; large ones hold steady." />
+
+  <!-- ../ because this page lives in /viz/ -->
+  <link rel="stylesheet" href="../assets/css/site.css" />
+
+  <!--
+    D3 v7 (UMD build, exposes global `d3`). Verified CDN URL: https://cdn.jsdelivr.net/npm/d3@7
+    Loaded BEFORE our script so `d3` exists when hardy-weinberg.js runs.
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body class="viz-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container container-wide">
+      <a class="site-title" href="../index.html">learn<span>biostats</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#posts">Posts</a>
+        <a href="hardy-weinberg.html" aria-current="page">Visualization</a>
+        <!-- {{SUBSTACK_URL}} placeholder -->
+        <a href="{{SUBSTACK_URL}}">Substack</a>
+        <!-- {{GITHUB_REPO_URL}} placeholder -->
+        <a href="{{GITHUB_REPO_URL}}">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container container-wide">
+
+      <!-- Page title states the topic; each FIGURE has a takeaway title. -->
+      <h1>Hardy-Weinberg equilibrium, and how drift breaks it</h1>
+      <p class="lead">
+        A single gene with two alleles, A and a. The frequency of A is
+        <em>p</em>; the frequency of a is <em>q = 1 - p</em>. Two ideas in one
+        page: what the genotype proportions <em>should</em> be in an idealized
+        population, and what actually happens to allele frequencies when the
+        population is small.
+      </p>
+
+      <!-- ============ FIGURE 1: Hardy-Weinberg genotype frequencies ============ -->
+      <section class="viz-figure" aria-labelledby="hw-takeaway">
+        <!-- Title that STATES THE TAKEAWAY, not just the topic. -->
+        <h2 id="hw-takeaway" class="viz-takeaway">
+          Genotype proportions are fixed by allele frequency alone: AA = p&sup2;, Aa = 2pq, aa = q&sup2;.
+        </h2>
+        <p class="viz-subhead">
+          Drag <em>p</em> and watch the three bars. They always add up to 100% of the population.
+        </p>
+
+        <div class="controls">
+          <div class="control">
+            <label for="p-slider">Allele frequency p (of A) <span class="val" id="p-val">0.50</span></label>
+            <input type="range" id="p-slider" min="0" max="1" step="0.01" value="0.5"
+                   aria-describedby="p-help" />
+            <small id="p-help">q (of a) = <span id="q-val">0.50</span>. Moving p moves q the opposite way.</small>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div id="hw-chart"></div>
+        </div>
+
+        <ul class="legend" aria-hidden="false">
+          <li><span class="swatch" style="background:#0072B2"></span> AA (p&sup2;)</li>
+          <li><span class="swatch" style="background:#E69F00"></span> Aa (2pq)</li>
+          <li><span class="swatch" style="background:#009E73"></span> aa (q&sup2;)</li>
+        </ul>
+
+        <p class="viz-caption">
+          <strong>What this shows.</strong> Under the Hardy-Weinberg assumptions
+          (random mating, no selection, mutation, or migration, and a very large
+          population), genotype frequencies are completely determined by allele
+          frequency. <strong>How to read it.</strong> Compare the bars by
+          <em>height</em> (length from the zero baseline). Heterozygotes (Aa,
+          orange) are most common at p = 0.5, where 2pq = 0.5, and become rare as
+          p approaches 0 or 1. Rare alleles hide mostly inside heterozygotes,
+          which is why a recessive allele can persist at low frequency without
+          showing up as the aa phenotype.
+        </p>
+      </section>
+
+      <!-- ============ FIGURE 2: Genetic drift ============ -->
+      <section class="viz-figure" aria-labelledby="drift-takeaway" style="margin-top:2.6rem;">
+        <h2 id="drift-takeaway" class="viz-takeaway">
+          The takeaway: small populations drift hard. Large ones barely move.
+        </h2>
+        <p class="viz-subhead">
+          Both lines start at the same p. The
+          <span style="color:#D55E00;font-weight:700;">small population (orange)</span>
+          wanders and often hits fixation or loss; the
+          <span style="color:#0072B2;font-weight:700;">large population (blue)</span>
+          stays near where it began.
+        </p>
+
+        <div class="controls">
+          <div class="control">
+            <label for="n-slider">Small population size N <span class="val" id="n-val">25</span></label>
+            <input type="range" id="n-slider" min="5" max="500" step="5" value="25"
+                   aria-describedby="n-help" />
+            <small id="n-help">Diploid, so 2N gene copies are resampled each generation. Compared against a fixed large N = 2000.</small>
+          </div>
+          <div class="control control-buttons" role="group" aria-label="Advance the simulation">
+            <button class="btn btn-secondary" id="step-1" type="button">Step 1 gen</button>
+            <button class="btn btn-secondary" id="step-10" type="button">Step 10</button>
+            <button class="btn btn-primary"   id="step-50" type="button">Step 50</button>
+            <button class="btn btn-secondary" id="drift-reset" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <div id="drift-chart"></div>
+        </div>
+
+        <p class="viz-caption">
+          <strong>What this shows.</strong> This is the Wright-Fisher model. With
+          no selection, the next generation is formed by randomly sampling 2N
+          gene copies from the current pool, so the number of A copies next
+          generation is a Binomial(2N, p) draw. The <em>expected</em> frequency
+          never changes, but each generation adds sampling noise with variance
+          p&middot;q / (2N). <strong>How to read it.</strong> Follow the two lines
+          left to right across generations. Smaller N means a larger denominator
+          shrinks slowly, so the variance term is bigger and the orange line
+          jumps further each step. Push enough generations and the small
+          population usually slams into one of the dashed
+          <span style="color:#CC79A7;font-weight:700;">absorbing</span> lines:
+          fixation (p = 1, the A allele is all that is left) or loss (p = 0, A is
+          gone). Once there, drift can no longer move it. Shrink N and watch how
+          much sooner that happens.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Try this.</strong> Set N small (say 10), then click
+            <em>Step 50</em> a few times and notice how often the orange line
+            reaches fixation or loss while the blue large-N line is still hovering
+            near its start. Then drag N up toward 500 and reset: the orange line
+            calms down and starts to look like the blue one. That single contrast
+            is genetic drift.
+          </p>
+        </div>
+      </section>
+
+      <p style="margin-top:2.2rem;">
+        <a class="btn btn-secondary" href="../index.html">&larr; Back to home</a>
+        <!-- {{SUBSTACK_URL}} placeholder -->
+        <a class="btn btn-primary" href="{{SUBSTACK_URL}}">Read the essays on Substack</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container-wide">
+      <p>
+        learnbiostats — a learning-in-public project.
+        Essays on <a href="{{SUBSTACK_URL}}">Substack</a> ·
+        Source on <a href="{{GITHUB_REPO_URL}}">GitHub</a>.
+      </p>
+      <p>Visualization built with D3 v7. Okabe-Ito colorblind-safe palette. Honest axes (no truncation, no area-for-quantity).</p>
+    </div>
+  </footer>
+
+  <!-- Our chart code, after D3 and after the DOM elements above. -->
+  <script src="../assets/js/hardy-weinberg.js"></script>
+</body>
+</html>

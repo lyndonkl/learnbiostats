@@ -1,0 +1,39 @@
+---
+type: question-bank
+module: pNmM
+phase: 0
+created: YYYY-MM-DD
+tags: [assessment]
+---
+
+# pNmM · Question Bank
+
+Probing questions for the `biostat-assessor` to draw from. Organized by Bloom level, ascending. The assessor never reveals answers first; it asks, waits, then probes the gap. "Answer sketches" below are for the assessor's grading only — they are not read to the learner.
+
+## remember (retrieval — can you recall the primitive?)
+1. **Q:** …
+   *Answer sketch:* …
+
+## understand (explain in your own words)
+1. **Q:** …
+   *Answer sketch:* …
+
+## apply (use it on a new, concrete case)
+1. **Q:** …
+   *Answer sketch:* …
+
+## analyze (take it apart; compare; find the assumption)
+1. **Q:** …
+   *Answer sketch:* …
+
+## evaluate / create (judge a tradeoff; design something)
+1. **Q:** …
+   *Answer sketch:* …
+
+## Misconception traps
+Common wrong mental models for this module, and the question that surfaces each:
+- **Trap:** … → **surfacing question:** …
+
+## Transfer prompt
+One question that forces the concept into an unfamiliar context (ideally a crop-breeding scenario).
+- **Q:** …

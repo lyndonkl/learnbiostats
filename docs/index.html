@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>learnbiostats — learning biostatistics &amp; genomics in public</title>
+  <meta name="description" content="A learning-in-public project working through biostatistics, quantitative genetics, and machine-learning-driven genomics — with interactive D3 visualizations." />
+
+  <link rel="stylesheet" href="assets/css/site.css" />
+
+  <!--
+    D3 v7, loaded from the jsDelivr CDN (UMD build, exposes the global `d3`).
+    The home page does not draw a chart, but D3 is loaded here so it is warm
+    in the browser cache before the visitor opens a /viz/ page.
+    Verified URL: https://cdn.jsdelivr.net/npm/d3@7
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container container-wide">
+      <a class="site-title" href="index.html">learn<span>biostats</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#posts">Posts</a>
+        <a href="viz/hardy-weinberg.html">Visualization</a>
+        <!-- {{SUBSTACK_URL}}: replace with the full Substack URL, e.g. https://yourname.substack.com -->
+        <a href="{{SUBSTACK_URL}}">Substack</a>
+        <!-- {{GITHUB_REPO_URL}}: replace with the repo URL, e.g. https://github.com/you/learnbiostats -->
+        <a href="{{GITHUB_REPO_URL}}">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================= HERO ============================= -->
+    <section class="hero">
+      <div class="container">
+        <h1>Learning biostatistics in public.</h1>
+        <p class="lead">
+          I am working through biostatistics, quantitative genetics, and
+          machine-learning-driven genomics from the ground up, and writing down
+          what I understand as I understand it. The essays live on Substack. The
+          interactive pieces live here, where I can build the thing I am trying
+          to learn and let you poke at it too.
+        </p>
+
+        <!--
+          Preattentive emphasis: exactly ONE primary (filled) button so the eye
+          lands on the main action first. The rest are secondary (outlined).
+        -->
+        <div class="btn-row">
+          <!-- {{SUBSTACK_URL}} placeholder, replace before/at first publish -->
+          <a class="btn btn-primary" href="{{SUBSTACK_URL}}">Read the essays on Substack</a>
+          <a class="btn btn-secondary" href="viz/hardy-weinberg.html">Open the interactive visualization</a>
+          <!-- {{GITHUB_REPO_URL}} placeholder -->
+          <a class="btn btn-secondary" href="{{GITHUB_REPO_URL}}">View the source on GitHub</a>
+        </div>
+
+        <div class="callout">
+          <p>
+            <strong>Why learn in public?</strong> Writing for an audience forces
+            me to turn a vague feeling of "I think I get it" into a claim I can
+            defend. If an explanation is hand-wavy here, it is hand-wavy in my
+            head. The visualizations are the same idea in another medium: if I
+            can make the math move, I probably understand the math.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= POSTS ============================ -->
+    <section id="posts" aria-labelledby="posts-heading">
+      <div class="container">
+        <h2 id="posts-heading">Posts</h2>
+        <p>
+          Each essay is published on Substack. When a post goes live, it gets a
+          card below that links out to its Substack URL. (This site does not
+          host the essay text; it points to the canonical copy on Substack.)
+        </p>
+
+        <!--
+          HOW TO ADD A PUBLISHED POST
+          ===========================
+          When you publish an essay on Substack:
+            1. Copy the <li class="card"> ... </li> TEMPLATE block below.
+            2. Paste it as the FIRST child of <ul class="card-grid"> (newest first).
+            3. Fill in:
+                 - href           -> the full Substack post URL
+                 - the <h3> text  -> the post title
+                 - <p class="meta"> -> the publish date (YYYY-MM-DD)
+                 - <p> summary    -> one-sentence dek / teaser
+            4. Delete the "Nothing published yet" placeholder card once you have
+               at least one real post.
+
+          POST CARD TEMPLATE (copy me, do not delete me — keep me commented):
+          <li class="card">
+            <span class="tag">Essay</span>
+            <h3><a href="FULL_SUBSTACK_POST_URL">Post title goes here</a></h3>
+            <p class="meta">Published 2026-06-15</p>
+            <p>One-sentence summary of what the post argues.</p>
+          </li>
+        -->
+        <ul class="card-grid">
+          <!-- PLACEHOLDER CARD — delete once the first real post is published. -->
+          <li class="card placeholder">
+            <span class="tag">Placeholder</span>
+            <h3>Nothing published yet</h3>
+            <p class="meta">Coming soon</p>
+            <p>
+              The first essay is in progress. Until then, subscribe on Substack
+              so the first post lands in your inbox, or open the interactive
+              Hardy-Weinberg visualization to see where this is going.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================= VISUALIZATIONS ======================= -->
+    <section id="viz" aria-labelledby="viz-heading">
+      <div class="container">
+        <h2 id="viz-heading">Interactive visualizations</h2>
+        <p>
+          Built with D3. Each one lets you change an assumption and watch the
+          consequence, because that is how the intuition actually sticks.
+        </p>
+        <ul class="card-grid">
+          <li class="card">
+            <span class="tag">Population genetics</span>
+            <h3><a href="viz/hardy-weinberg.html">Hardy-Weinberg equilibrium &amp; genetic drift</a></h3>
+            <p class="meta">Interactive</p>
+            <p>
+              Drag the allele frequency and watch the expected genotype
+              proportions respond, then shrink the population and watch random
+              drift take over. Small populations wander; large ones hold steady.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================== SUBSCRIBE ========================== -->
+    <section id="subscribe" aria-labelledby="subscribe-heading">
+      <div class="container">
+        <h2 id="subscribe-heading">Follow along</h2>
+        <p>
+          New essays publish on Substack. If you want the next one in your inbox,
+          that is the place to subscribe.
+        </p>
+        <div class="btn-row">
+          <!-- {{SUBSTACK_URL}} placeholder -->
+          <a class="btn btn-primary" href="{{SUBSTACK_URL}}">Subscribe on Substack</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container-wide">
+      <p>
+        learnbiostats — a learning-in-public project.
+        Essays on <a href="{{SUBSTACK_URL}}">Substack</a> ·
+        Source on <a href="{{GITHUB_REPO_URL}}">GitHub</a>.
+      </p>
+      <p>
+        Built as a static site with D3 v7. No tracking, no build step.
+        Charts use the Okabe-Ito colorblind-safe palette.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

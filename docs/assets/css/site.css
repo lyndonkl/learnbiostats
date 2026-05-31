@@ -1,0 +1,296 @@
+/* ==========================================================================
+   learnbiostats — site.css
+   Clean, readable styling for the learning-in-public site.
+
+   Design principles applied throughout:
+   - Clear visual hierarchy (type scale, spacing rhythm, one accent color).
+   - Low cognitive load (generous whitespace, max line length ~70ch, few colors).
+   - Colorblind-safe palette (Okabe-Ito) reused in CSS and in the D3 viz so the
+     site and the charts speak the same visual language.
+   - Preattentive emphasis reserved for the single most important element on a
+     view (the primary call-to-action / the annotated focus point in a chart).
+   ========================================================================== */
+
+/* --- Color tokens: Okabe-Ito colorblind-safe palette ---------------------- */
+:root {
+  /* Okabe-Ito qualitative palette (safe for deuteranopia/protanopia/tritanopia) */
+  --c-black:        #000000;
+  --c-orange:       #E69F00;
+  --c-skyblue:      #56B4E9;
+  --c-bluishgreen:  #009E73;
+  --c-yellow:       #F0E442;
+  --c-blue:         #0072B2;
+  --c-vermillion:   #D55E00;
+  --c-reddishpurple:#CC79A7;
+
+  /* Semantic roles */
+  --ink:        #1a1f24;   /* primary text */
+  --ink-soft:   #4a5560;   /* secondary text */
+  --ink-faint:  #75828d;   /* captions, metadata */
+  --paper:      #ffffff;   /* page background */
+  --paper-2:    #f6f8fa;   /* card / panel background */
+  --rule:       #e3e8 ec;  /* hairline borders (overridden below) */
+  --rule:       #e3e8ec;
+  --accent:     var(--c-blue);        /* primary accent / CTA */
+  --accent-2:   var(--c-vermillion);  /* preattentive "focus" highlight */
+  --link:       var(--c-blue);
+  --link-hover: #005a8c;
+
+  /* Type + spacing */
+  --maxw:       72ch;
+  --maxw-wide:  1040px;
+  --radius:     10px;
+  --shadow:     0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10);
+  --font-body:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* --- Reset-ish ------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Layout containers ---------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+.container-wide { max-width: var(--maxw-wide); }
+
+/* --- Skip link for keyboard users ---------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: .5rem .9rem;
+  border-radius: 0 0 var(--radius) 0;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* --- Visual hierarchy: typography ---------------------------------------- */
+h1, h2, h3 { line-height: 1.2; color: var(--ink); font-weight: 700; }
+h1 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 2.7rem); margin: 0 0 .4rem; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.35rem, 1.1rem + 1.1vw, 1.7rem); margin: 2.4rem 0 .8rem; }
+h3 { font-size: 1.15rem; margin: 1.6rem 0 .5rem; }
+
+p  { margin: 0 0 1rem; max-width: var(--maxw); }
+.lead { font-size: 1.18rem; color: var(--ink-soft); }
+
+small, .meta { color: var(--ink-faint); font-size: .9rem; }
+
+a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--link-hover); }
+a:focus-visible { outline: 3px solid var(--c-skyblue); outline-offset: 2px; border-radius: 3px; }
+
+code, kbd { font-family: var(--font-mono); font-size: .92em; }
+code { background: var(--paper-2); padding: .1em .35em; border-radius: 5px; }
+
+/* --- Site header --------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.site-header .container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  flex-wrap: wrap;
+}
+.site-title { font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; text-decoration: none; color: var(--ink); }
+.site-title span { color: var(--accent); }
+.site-nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.site-nav a { text-decoration: none; color: var(--ink-soft); font-size: .98rem; }
+.site-nav a:hover { color: var(--accent); }
+
+/* --- Hero ---------------------------------------------------------------- */
+.hero { padding-block: 2.6rem 1.4rem; }
+.hero .lead { margin-bottom: 1.4rem; }
+
+/* --- Buttons: preattentive emphasis on the ONE primary action ------------ */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .65rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: background-color .15s ease, transform .05s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: var(--link-hover); color: #fff; }
+.btn-secondary {
+  background: var(--paper);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-secondary:hover { background: var(--paper-2); }
+.btn-row { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1.2rem 0; }
+
+/* --- Cards: posts list --------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.card {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.card h3 { margin: 0; font-size: 1.08rem; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card .meta { margin: 0; }
+.card p { margin: .25rem 0 0; font-size: .96rem; color: var(--ink-soft); }
+.card.placeholder {
+  border-style: dashed;
+  background: repeating-linear-gradient(
+    -45deg, var(--paper-2), var(--paper-2) 12px, #eef1f4 12px, #eef1f4 24px);
+}
+.card .tag {
+  align-self: flex-start;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: #fff;
+  border: 1px solid var(--accent-2);
+  border-radius: 999px;
+  padding: .1rem .55rem;
+}
+
+/* --- Callout / note panel ------------------------------------------------ */
+.callout {
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  background: var(--paper-2);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1.4rem 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* ==========================================================================
+   Visualization page
+   ========================================================================== */
+.viz-page main { padding-bottom: 3rem; }
+
+.viz-figure {
+  margin: 1.5rem 0 0;
+  background: var(--paper);
+}
+
+/* The takeaway title sits ABOVE the chart and states the insight, not the topic. */
+.viz-takeaway {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 .15rem;
+}
+.viz-subhead { color: var(--ink-soft); margin: 0 0 1rem; font-size: 1rem; }
+
+/* "How to read it" caption — keeps cognitive load low by teaching the encoding. */
+.viz-caption {
+  font-size: .95rem;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: .85rem 1rem;
+  margin: 0 0 1.4rem;
+}
+.viz-caption strong { color: var(--ink); }
+
+/* Control panels for sliders / buttons */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.5rem;
+  align-items: end;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1rem 0 1.4rem;
+}
+.control { display: flex; flex-direction: column; gap: .35rem; }
+.control label { font-weight: 600; font-size: .95rem; }
+.control .val { font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 700; }
+.control input[type="range"] { width: 100%; accent-color: var(--accent); }
+.control-buttons { display: flex; gap: .5rem; flex-wrap: wrap; align-items: end; }
+
+/* The chart SVGs */
+.chart-wrap { width: 100%; overflow-x: auto; }
+svg.chart { display: block; width: 100%; height: auto; font-family: var(--font-body); }
+
+/* SVG text classes mirrored by the JS */
+.axis text { fill: var(--ink-soft); font-size: 12px; }
+.axis line, .axis path { stroke: #c9d1d9; shape-rendering: crispEdges; }
+.axis-title { fill: var(--ink); font-size: 13px; font-weight: 600; }
+
+.bar-label { fill: var(--ink); font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.annotation { fill: var(--ink-soft); font-size: 12px; }
+.annotation-note { fill: var(--ink); font-size: 12.5px; font-weight: 600; }
+.annotation-line { stroke: var(--ink-faint); stroke-width: 1; stroke-dasharray: 3 3; }
+
+/* Two charts side by side on wide screens, stacked on narrow */
+.viz-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 860px) {
+  .viz-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Legend shared by charts */
+.legend { display: flex; gap: 1.1rem; flex-wrap: wrap; margin: .5rem 0 0; padding: 0; list-style: none; font-size: .9rem; color: var(--ink-soft); }
+.legend li { display: flex; align-items: center; gap: .4rem; }
+.legend .swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding-block: 1.6rem 2.4rem;
+  color: var(--ink-faint);
+  font-size: .92rem;
+}
+.site-footer a { color: var(--ink-soft); }
+
+/* --- Motion preference ---------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
