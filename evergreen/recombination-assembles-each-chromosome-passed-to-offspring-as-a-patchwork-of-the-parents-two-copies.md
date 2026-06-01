@@ -6,7 +6,7 @@ phase: 1
 module: p1m1
 tags: [genetics, recombination, crossover, meiosis, inheritance]
 mastery: functional
-review-due: 2026-06-01
+review-due: 2026-06-04
 aliases:
   - "Recombination assembles each chromosome passed to offspring as a patchwork of the parent's two copies"
 ---

@@ -6,7 +6,7 @@ phase: 1
 module: p1m1
 tags: [genetics, genotype, allele, snp, biallelic, encoding]
 mastery: functional
-review-due: 2026-06-01
+review-due: 2026-06-04
 aliases:
   - "A genotype at a position is a pair of alleles, and the 0/1/2 encoding counts how many copies are the variant"
 ---

@@ -6,7 +6,7 @@ phase: 1
 module: p1m1
 tags: [genetics, mutation, allele, variation, snp]
 mastery: functional
-review-due: 2026-06-01
+review-due: 2026-06-04
 aliases:
   - "A mutation is a copying error that changes the base at a position, creating a new allele that did not exist before"
 ---
