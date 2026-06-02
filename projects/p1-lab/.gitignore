@@ -1,0 +1,16 @@
+# Raw + derived genotype data — large, regenerable via get_data.py; never commit
+data/
+
+# uv virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.py[oc]
+*.egg-info/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local figures scratch (commit final deliverable figures deliberately, elsewhere)
+*.tmp.png
