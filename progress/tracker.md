@@ -1,7 +1,7 @@
 ---
 type: tracker
 created: 2026-05-30
-updated: 2026-06-01
+updated: 2026-06-06
 tags: [progress, status-board]
 ---
 
@@ -9,8 +9,8 @@ tags: [progress, status-board]
 
 The single status board for the curriculum. `biostat-coach` reads and updates this; I keep it honest. Status legend matches the module lifecycle in [[conventions|Vault Conventions]] §6: **not-started → reading → practicing → assessed → mastered**. A module is `mastered` only at the `proficient`+ band on its core claims (see [[skills-matrix|the skills matrix]]).
 
-**Daily streak:** 2 days (started 2026-05-30) · last study session: 2026-06-01 (p1m1, 2 notes + closed-book review) · longest streak: 2
-**This week's focus:** [[p1m1-dna-genes-and-inheritance|p1m1]] concepts complete — 5 evergreen notes (genotype, mutation, recombination, 1:2:1 cross, linkage). Next: the hands-on project [[p1-allele-frequencies-and-ld-from-real-genotypes|allele frequencies + LD on real data]], then a formal assessment.
+**Daily streak:** 1 day (resumed 2026-06-06 after a few days off) · last study session: 2026-06-06 (p1 lab — allele frequencies + Hardy–Weinberg) · longest streak: 3
+**This week's focus:** [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection|p1m2 · Population Genetics]] in progress via the [[p1-allele-frequencies-and-ld-from-real-genotypes|p1 lab]] — done: load + MAF spectrum + Hardy–Weinberg (3 p1m2 notes earned). Next: LD decay (milestone 4, p1m3). Ahead: drift/selection.
 **Phase in progress:** Phase 1 — Genetics for Data Scientists.
 
 ---
@@ -32,7 +32,7 @@ The single status board for the curriculum. `biostat-coach` reads and updates th
 | ID | Module | Weeks | Status | Mastery | Review due |
 |---|---|---|---|---|---|
 | p1m1 | [[p1m1-dna-genes-and-inheritance\|DNA, Genes, and Inheritance]] | Wk 1 | practicing | functional | 2026-06-02 |
-| p1m2 | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|Population Genetics: Allele Frequencies, HWE, Drift, Selection]] | Wk 2–3 | not-started | unfamiliar | — |
+| p1m2 | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|Population Genetics: Allele Frequencies, HWE, Drift, Selection]] | Wk 2–3 | practicing | functional | 2026-06-07 |
 | p1m3 | [[p1m3-intro-genomics-snps-sequencing-genotyping-ld\|Intro Genomics: SNPs, Sequencing, Genotyping, LD]] | Wk 4–6 | not-started | unfamiliar | — |
 | p2m1 | [[p2m1-phenotype-vs-genotype-sources-of-variation-and-heritability\|Phenotype vs Genotype: Sources of Variation and Heritability]] | Wk 1–2 | not-started | unfamiliar | — |
 | p2m2 | [[p2m2-selection-breeding-value-and-response\|Selection: Breeding Value and Response]] | Wk 3–4 | not-started | unfamiliar | — |
