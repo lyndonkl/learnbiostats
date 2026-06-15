@@ -1,15 +1,48 @@
 ---
 type: journal
 created: 2026-05-30
-updated: 2026-05-30
-tags: [progress, journal, reflection, kolb]
+updated: 2026-06-06
+tags: [progress, journal, session-log, kolb]
 ---
 
 # Learning Journal
 
-A reverse-chronological reflection log. Newest entry on top. Each entry is a short Kolb-shaped reflection on a study day: what I did (Concrete Experience), what I noticed (Reflective Observation), the claim I formed (Abstract Conceptualization), and what I'll try next (Active Experimentation). This is *my* log — the prompts are mine to fill; nothing here should be pre-filled for me except the kickoff entry that explains the format.
+A reverse-chronological **session log**, newest entry on top. As of 2026-06-06 this is a *factual* log the assistant maintains: each entry records, in neutral terms, what happened on a study day — the module, what was done, the evergreen notes minted, and any status change. It is **not** written in your voice.
 
-The journal is the Reflective-Observation surface of the whole studio: the place where confusion gets named honestly before it becomes a clean evergreen claim. Vague entries are fine on hard days. Empty ones are not.
+The reflective layer (Kolb: what you noticed, the claim you formed, what surprised you, what's next) is **yours to add under any entry whenever you want** — adding it is optional, and the facts no longer wait for it. The 2026-05-30 kickoff below is your own first-person entry, kept as written.
+
+---
+
+## 2026-06-06 — p1 lab milestones 2–3: allele frequencies + Hardy–Weinberg
+- **Module:** p1m2 (Population Genetics), via the p1 lab.
+- **Did:** Computed per-SNP allele frequency across all 1.23M SNPs and plotted the MAF spectrum (milestone 2 — L-shaped: most variants rare). Ran Hardy–Weinberg genome-wide with a per-SNP chi-square test (milestone 3 — ~1.1% of SNPs failed at p<1e-6, flagging genotyping errors / structure). Worked the underlying statistics in depth: chi-square mechanics, degrees of freedom, why p-values are uniform under the null, variance≈mean for counts, and the allele-frequency calculation.
+- **Notes minted (p1m2):** [[allele-frequency-not-the-individual-genotype-is-the-state-variable-that-describes-a-population-at-a-locus|allele frequency = the population's state variable]]; [[the-allele-frequency-spectrum-is-l-shaped-most-variants-are-rare-because-each-is-born-rare-and-rises-slowly|the L-shaped MAF spectrum]]; [[a-hardy-weinberg-deviation-flags-genotypes-that-dont-match-the-allele-frequency-so-hwe-is-a-qc-filter|HWE deviation = a QC filter]].
+- **Status:** p1m2 → practicing / functional. Ran a `biostat-coach` reconciliation of the trackers.
+- *Reflection: yours to add.*
+
+---
+
+## 2026-06-02 — p1 lab setup + milestone 1: load real genotypes
+- **Module:** p1m1 / the p1 lab (bridges into p1m2–p1m3).
+- **Did:** Built the `uv` project (Python 3.13; numpy/pandas/matplotlib/bed-reader). Downloaded the 504-sample 1000G-EAS PLINK fileset and loaded it as a 504 × 1,235,116 genotype matrix at 0.62% missing (milestone 1). Plotted SNPs-per-chromosome (`01b`).
+- **Notes minted:** [[a-genotype-matrix-size-is-individuals-times-measured-snps-distinct-from-the-genomes-three-billion-positions|genotype-matrix size vs the genome]] (p1m1); [[the-number-of-snps-on-a-chromosome-tracks-its-length-only-loosely-because-snp-density-varies|SNP count ≈ size × density]] (p1m1); [[a-genotyping-panel-samples-a-sparse-genome-wide-subset-of-positions-and-ld-lets-each-marker-tag-the-unmeasured-positions-near-it|sparse panel + LD tagging]] (p1m3).
+- *Reflection: yours to add.*
+
+---
+
+## 2026-06-01 — p1m1 session 2: the cross + linkage; concepts complete
+- **Module:** p1m1.
+- **Did:** Kolb session — derived the `Aa × Aa` 1:2:1 genotype ratio and genetic linkage from the genotype grid. Passed a closed-book retrieval review of the first three notes. p1m1 concepts complete.
+- **Notes minted:** [[a-cross-between-two-heterozygotes-gives-a-1-2-1-genotype-ratio-because-the-heterozygous-combination-can-form-two-ways|the 1:2:1 cross]]; [[loci-close-together-on-a-chromosome-tend-to-be-inherited-together-because-a-crossover-rarely-lands-between-them|genetic linkage]].
+- *Reflection: yours to add.*
+
+---
+
+## 2026-05-31 — p1m1 session 1: DNA, genotype, mutation, recombination
+- **Module:** p1m1.
+- **Did:** First Kolb session — from a 6×4 grid of 0/1/2 values, reconstructed what a genotype and allele are and what the 0/1/2 encoding counts, then mutation (which creates alleles) and recombination (which shuffles them). Built the DNA / chromosome / SNP picture from first principles alongside the OpenStax reading.
+- **Notes minted:** [[a-genotype-at-a-position-is-a-pair-of-alleles-and-the-0-1-2-encoding-counts-how-many-copies-are-the-variant|genotype = a 0/1/2 variant count]]; [[a-mutation-is-a-copying-error-that-changes-the-base-at-a-position-creating-a-new-allele|mutation creates alleles]]; [[recombination-assembles-each-chromosome-passed-to-offspring-as-a-patchwork-of-the-parents-two-copies|recombination shuffles alleles]].
+- *Reflection: yours to add.*
 
 ---
 
