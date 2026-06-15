@@ -1,7 +1,7 @@
 ---
 type: skills-matrix
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-06
 tags: [progress, competencies, mastery]
 ---
 
@@ -13,8 +13,8 @@ A self-rated competency map across the studio. Each row is a competency; the ban
 
 | Competency | Phase | Current band | Target | Self-rated | Confirmed by assessor | Evidence / where proven |
 |---|---|---|---|---|---|---|
-| Genetics literacy (DNA, genes, inheritance) | 1 | unfamiliar | proficient | 2026-05-30 | — | [[p1m1-dna-genes-and-inheritance\|p1m1]] |
-| Population genetics (allele freq, HWE, drift, selection) | 1 | unfamiliar | proficient | 2026-05-30 | — | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|p1m2]] |
+| Genetics literacy (DNA, genes, inheritance) | 1 | functional | proficient | 2026-06-06 | — | [[p1m1-dna-genes-and-inheritance\|p1m1]] — 5 earned evergreen notes (0/1/2 encoding, mutation, recombination, 1:2:1 cross, linkage) |
+| Population genetics (allele freq, HWE, drift, selection) | 1 | functional | proficient | 2026-06-06 | — | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|p1m2]] — allele-freq/HWE half: 3 notes (allele-freq state variable, L-shaped MAF spectrum, HWE-as-QC) + p1 lab milestones 2–3; drift + selection still to come |
 | Quantitative genetics (variance, heritability, breeder's eq.) | 2 | unfamiliar | fluent | 2026-05-30 | — | [[p2m1-phenotype-vs-genotype-sources-of-variation-and-heritability\|p2m1]], [[p2m2-selection-breeding-value-and-response\|p2m2]] |
 | BLUP / mixed models (REML, relationship matrices) | 2 | unfamiliar | proficient | 2026-05-30 | — | [[p2m3-mixed-models-blup-and-relationship-matrices\|p2m3]] |
 | Sequencing / VCF / QC (pipeline, filtering, missingness) | 3 | unfamiliar | functional | 2026-05-30 | — | [[p3m1-the-sequencing-to-variants-pipeline\|p3m1]], [[p3m2-vcf-and-snp-analysis-qc-filtering-missingness\|p3m2]] |
@@ -41,6 +41,7 @@ A self-rated competency map across the studio. Each row is a competency; the ban
 | Date | Change |
 |---|---|
 | 2026-05-30 | Matrix created at studio kickoff. All technical competencies `unfamiliar`; writing and viz `aware` (transferable from prior data-science work). |
+| 2026-06-06 | Reconciliation pass (`biostat-coach`). Genetics literacy `unfamiliar` → `functional` (p1m1 concepts complete, 5 evergreen notes; informal closed-book retrieval of the first three passed). Population genetics `unfamiliar` → `functional` for the allele-frequency / HWE half (3 p1m2 notes + p1 lab milestones 2–3); drift + selection still outstanding. *Confirmed-by-assessor* left blank for both — no formal `biostat-assessor` session has run yet. Later-phase competencies unchanged. |
 
 ## Links
 - Context: [[tracker|Progress Tracker]]

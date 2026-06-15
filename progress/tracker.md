@@ -33,7 +33,7 @@ The single status board for the curriculum. `biostat-coach` reads and updates th
 |---|---|---|---|---|---|
 | p1m1 | [[p1m1-dna-genes-and-inheritance\|DNA, Genes, and Inheritance]] | Wk 1 | practicing | functional | 2026-06-02 |
 | p1m2 | [[p1m2-population-genetics-allele-frequencies-hwe-drift-selection\|Population Genetics: Allele Frequencies, HWE, Drift, Selection]] | Wk 2–3 | practicing | functional | 2026-06-07 |
-| p1m3 | [[p1m3-intro-genomics-snps-sequencing-genotyping-ld\|Intro Genomics: SNPs, Sequencing, Genotyping, LD]] | Wk 4–6 | not-started | unfamiliar | — |
+| p1m3 | [[p1m3-intro-genomics-snps-sequencing-genotyping-ld\|Intro Genomics: SNPs, Sequencing, Genotyping, LD]] | Wk 4–6 | not-started | unfamiliar | 2026-06-03 |
 | p2m1 | [[p2m1-phenotype-vs-genotype-sources-of-variation-and-heritability\|Phenotype vs Genotype: Sources of Variation and Heritability]] | Wk 1–2 | not-started | unfamiliar | — |
 | p2m2 | [[p2m2-selection-breeding-value-and-response\|Selection: Breeding Value and Response]] | Wk 3–4 | not-started | unfamiliar | — |
 | p2m3 | [[p2m3-mixed-models-blup-and-relationship-matrices\|Mixed Models, BLUP, and Relationship Matrices]] | Wk 5–6 | not-started | unfamiliar | — |
