@@ -6,7 +6,7 @@ phase: 1
 module: p1m2
 tags: [population-genetics, allele-frequency, state-variable]
 mastery: functional
-review-due: 2026-06-07
+review-due: 2026-06-23
 aliases:
   - "Allele frequency, not the individual genotype, is the state variable that describes a population at a locus"
 ---

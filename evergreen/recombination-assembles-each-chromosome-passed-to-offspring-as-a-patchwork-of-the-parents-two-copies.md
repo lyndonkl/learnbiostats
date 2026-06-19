@@ -5,8 +5,8 @@ source: "Session p1m1 — mutation vs recombination"
 phase: 1
 module: p1m1
 tags: [genetics, recombination, crossover, meiosis, inheritance]
-mastery: functional
-review-due: 2026-06-04
+mastery: aware
+review-due: 2026-06-19
 aliases:
   - "Recombination assembles each chromosome passed to offspring as a patchwork of the parent's two copies"
 ---

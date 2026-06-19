@@ -6,7 +6,7 @@ phase: 1
 module: p1m2
 tags: [population-genetics, hardy-weinberg, quality-control, chi-square, population-structure]
 mastery: functional
-review-due: 2026-06-07
+review-due: 2026-06-23
 aliases:
   - "A Hardy–Weinberg deviation flags a SNP whose genotypes don't match its allele frequency, making HWE a quality-control filter for genotyping errors and population structure"
 ---

@@ -6,7 +6,7 @@ phase: 1
 module: p1m1
 tags: [genetics, linkage, recombination, ld, marker-prediction]
 mastery: functional
-review-due: 2026-06-02
+review-due: 2026-06-23
 aliases:
   - "Loci close together on a chromosome tend to be inherited together because a crossover rarely lands in the small gap between them"
 ---

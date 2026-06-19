@@ -6,7 +6,7 @@ phase: 1
 module: p1m2
 tags: [population-genetics, hardy-weinberg, genotype-frequencies, allele-frequency]
 mastery: functional
-review-due: 2026-06-07
+review-due: 2026-06-23
 aliases:
   - "Hardy–Weinberg predicts genotype proportions q², 2pq, p² from the allele frequency, by treating each individual's two alleles as independent draws from the population pool"
 ---
