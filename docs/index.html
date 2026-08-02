@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+
+<!-- Google Analytics 4 with Consent Mode: default denied in the EEA, no banner -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
+  });
+  gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-64NRH1BBVW"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-64NRH1BBVW');
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>learnbiostats — learning biostatistics &amp; genomics in public</title>
-  <meta name="description" content="A learning-in-public project working through biostatistics, quantitative genetics, and machine-learning-driven genomics — with interactive D3 visualizations." />
+  <title>Learning biostatistics, genetics &amp; genomics in public · KL D'Souza</title>
+  <meta name="description" content="Interactive D3 charts and essays from a learning-in-public project working through biostatistics, quantitative genetics and machine-learning-driven genomics." />
+  <meta name="author" content="KL D'Souza" />
+  <link rel="canonical" href="https://lyndonkl.github.io/learnbiostats/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Learning biostatistics, genetics &amp; genomics in public" />
+  <meta property="og:description" content="Interactive D3 charts and essays from a learning-in-public project working through biostatistics, quantitative genetics and machine-learning-driven genomics." />
+  <meta property="og:url" content="https://lyndonkl.github.io/learnbiostats/" />
+  <meta property="og:site_name" content="KL D'Souza" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learning biostatistics, genetics &amp; genomics in public" />
+  <meta name="twitter:description" content="Interactive D3 charts and essays from a learning-in-public project working through biostatistics, quantitative genetics and machine-learning-driven genomics." />
 
   <link rel="stylesheet" href="assets/css/site.css" />
 
@@ -25,8 +55,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#posts">Posts</a>
         <a href="viz/hardy-weinberg.html">Visualization</a>
-        <!-- https://YOURHANDLE.substack.com: replace with the full Substack URL, e.g. https://yourname.substack.com -->
-        <a href="https://YOURHANDLE.substack.com">Substack</a>
+        <a href="https://thethinkersnotebook.substack.com/">Substack</a>
         <!-- https://github.com/lyndonkl/learnbiostats: replace with the repo URL, e.g. https://github.com/you/learnbiostats -->
         <a href="https://github.com/lyndonkl/learnbiostats">GitHub</a>
       </nav>
@@ -51,8 +80,7 @@
           lands on the main action first. The rest are secondary (outlined).
         -->
         <div class="btn-row">
-          <!-- https://YOURHANDLE.substack.com placeholder, replace before/at first publish -->
-          <a class="btn btn-primary" href="https://YOURHANDLE.substack.com">Read the essays on Substack</a>
+          <a class="btn btn-primary" href="https://thethinkersnotebook.substack.com/">Read the essays on Substack</a>
           <a class="btn btn-secondary" href="viz/hardy-weinberg.html">Open the interactive visualization</a>
           <!-- https://github.com/lyndonkl/learnbiostats placeholder -->
           <a class="btn btn-secondary" href="https://github.com/lyndonkl/learnbiostats">View the source on GitHub</a>
@@ -150,8 +178,7 @@
           that is the place to subscribe.
         </p>
         <div class="btn-row">
-          <!-- https://YOURHANDLE.substack.com placeholder -->
-          <a class="btn btn-primary" href="https://YOURHANDLE.substack.com">Subscribe on Substack</a>
+          <a class="btn btn-primary" href="https://thethinkersnotebook.substack.com/">Subscribe on Substack</a>
         </div>
       </div>
     </section>
@@ -161,7 +188,7 @@
     <div class="container container-wide">
       <p>
         learnbiostats — a learning-in-public project.
-        Essays on <a href="https://YOURHANDLE.substack.com">Substack</a> ·
+        Essays on <a href="https://thethinkersnotebook.substack.com/">Substack</a> ·
         Source on <a href="https://github.com/lyndonkl/learnbiostats">GitHub</a>.
       </p>
       <p>

@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+
+<!-- Google Analytics 4 with Consent Mode: default denied in the EEA, no banner -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
+  });
+  gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-64NRH1BBVW"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-64NRH1BBVW');
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hardy-Weinberg equilibrium &amp; genetic drift — learnbiostats</title>
-  <meta name="description" content="Interactive D3 visualization: drag allele frequency to see Hardy-Weinberg genotype proportions, then shrink the population to watch genetic drift take over. Small populations wander; large ones hold steady." />
+  <title>Hardy-Weinberg equilibrium &amp; genetic drift, visualized · KL D'Souza</title>
+  <meta name="description" content="Interactive D3 charts: drag the allele frequency to see Hardy-Weinberg genotype proportions, then shrink the population and watch genetic drift take over." />
+  <meta name="author" content="KL D'Souza" />
+  <link rel="canonical" href="https://lyndonkl.github.io/learnbiostats/viz/hardy-weinberg.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Hardy-Weinberg equilibrium &amp; genetic drift, visualized" />
+  <meta property="og:description" content="Interactive D3 charts: drag the allele frequency to see Hardy-Weinberg genotype proportions, then shrink the population and watch genetic drift take over." />
+  <meta property="og:url" content="https://lyndonkl.github.io/learnbiostats/viz/hardy-weinberg.html" />
+  <meta property="og:site_name" content="KL D'Souza" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hardy-Weinberg equilibrium &amp; genetic drift, visualized" />
+  <meta name="twitter:description" content="Interactive D3 charts: drag the allele frequency to see Hardy-Weinberg genotype proportions, then shrink the population and watch genetic drift take over." />
 
   <!-- ../ because this page lives in /viz/ -->
   <link rel="stylesheet" href="../assets/css/site.css" />
@@ -24,8 +54,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="../index.html#posts">Posts</a>
         <a href="hardy-weinberg.html" aria-current="page">Visualization</a>
-        <!-- https://YOURHANDLE.substack.com placeholder -->
-        <a href="https://YOURHANDLE.substack.com">Substack</a>
+        <a href="https://thethinkersnotebook.substack.com/">Substack</a>
         <!-- https://github.com/lyndonkl/learnbiostats placeholder -->
         <a href="https://github.com/lyndonkl/learnbiostats">GitHub</a>
       </nav>
@@ -150,8 +179,7 @@
 
       <p style="margin-top:2.2rem;">
         <a class="btn btn-secondary" href="../index.html">&larr; Back to home</a>
-        <!-- https://YOURHANDLE.substack.com placeholder -->
-        <a class="btn btn-primary" href="https://YOURHANDLE.substack.com">Read the essays on Substack</a>
+        <a class="btn btn-primary" href="https://thethinkersnotebook.substack.com/">Read the essays on Substack</a>
       </p>
     </div>
   </main>
@@ -160,7 +188,7 @@
     <div class="container container-wide">
       <p>
         learnbiostats — a learning-in-public project.
-        Essays on <a href="https://YOURHANDLE.substack.com">Substack</a> ·
+        Essays on <a href="https://thethinkersnotebook.substack.com/">Substack</a> ·
         Source on <a href="https://github.com/lyndonkl/learnbiostats">GitHub</a>.
       </p>
       <p>Visualization built with D3 v7. Okabe-Ito colorblind-safe palette. Honest axes (no truncation, no area-for-quantity).</p>
